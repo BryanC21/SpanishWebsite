@@ -1,0 +1,142 @@
+/* 
+    Created on : May 2, 2019, 12:09:55 PM
+    Author     : bryancaldera
+*/
+
+.navbar-custom {
+    background-color: orange;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-decoration: underline;
+}
+
+p {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+#myText {
+    font-size:18pt;
+}
+
+#demo {
+    font-size:18pt;
+}
+
+#demo2 {
+    font-size:18pt;
+}
+
+#demo3 {
+    font-size:18pt;
+}
+
+.self-portrait {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-left: 5vh;
+    padding-right: 10px;
+    object-fit: cover;
+}
+
+.table-cell {
+    border-style: solid;
+    border-color: white;
+    background-color: orange;
+    height: 100px;
+    margin-top: 1px;
+}
+
+.bio-text {
+    color: white;
+    margin-right: 5vh;
+    margin-left: 5vh;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.custom-row {
+    margin-left: 0%;
+    width: 100%;
+}
+
+.fixed-height-box {
+    height: 175px;
+    background-color: orange;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 25px;
+}
+
+.lesson-text {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card {
+    
+    height: 175px;
+    background-color: orange;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 15px;
+
+    perspective: 500px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-origin: center;
+    -webkit-transform-origin: center;
+    transition: transform 1s;
+    -webkit-transition: transform 1s;
+}
+
+.is-flipped {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 60px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
+
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
+}
+
+span {
+    color: white;
+}

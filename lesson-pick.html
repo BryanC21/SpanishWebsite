@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title id="title-page">Lesson 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="homepage.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <a class="navbar-brand" href="index.html">Learn Spanish</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="lessons.html">Lessons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quizes.html">Quizzes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flashcards.html">FlashCards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <br>
+            <h1 class="centered-text" id="title1">Section 1</h1>
+            <br>
+            <h1 class="centered-text" id="title2">How to greet someone</h1>
+            <br>
+
+            <h3 id="middle-text" class="lesson-text">This section will be on how to greet someone in Spanish. <br><br>Starting with the basics: <br><span style="color:orange;">Hola means Hello</span> <br><br>To say your name:<br><span style="color:orange;">Mi nombre es [your name] </span><br><br>Which translates to: <br>My name is <br><br>You can follow up with:<br><span style="color:orange;">"Como estas" which translates to How are you?</span><br><br>Now put a greeting together:<br><span style="color:orange;">Write in Spanish: Hello, my name is "[your name]"</span></h3>
+            <br>
+            <div class="centered-text">
+                <p style="font-size:18pt;">Sentence: <input type="text" id="myText" style="width: 50%;"></p>
+
+                <button onclick="myFunction()" style="background-color:orange;">Submit</button>
+
+                <p id="demo"></p>
+                
+                <br>
+                <a href="lesson-pick.html?section=2" id="follow-up" style="text-align: right;"><p>Next Lesson --></p></a>
+                <br>
+
+                <script>
+                    
+                    var ans = "hola, mi nombre es";
+                    
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const myParam = urlParams.get('section');
+                    
+                    if (myParam == 2){
+                        
+                        var element = document.getElementById("follow-up");
+                        var url = "lesson-pick.html?section=1"
+                        element.setAttribute("href", url);
+                        element.setAttribute("style", "text-align: left;");
+                        element.innerHTML = "<p><-- Previous Lesson</p>";
+                        
+                        ans = "uno";
+                        document.getElementById("title-page").innerHTML = "Section 2";
+                        document.getElementById("title1").innerHTML = "Section 2";
+                        document.getElementById("title2").innerHTML = "Numbers!";
+                        document.getElementById("middle-text").innerHTML = "This lesson is on numbers <br> It is still under construction: <br><span style=\"color:orange;\">Uno=One<br>Dos=Two<br>Tres=Three<br>Cuatro=Four</span><br>Write the number 1 below:";
+                    }
+                    
+                    function myFunction() {
+
+                        var x = document.getElementById("myText").value.toLowerCase();
+                        var y = "";
+                        for (var i = 0; i < ans.length; i++) {
+                            y += x.charAt(i);
+                        }
+                  
+                        var output = "Not quite right. Try again!";
+                        if (ans === y) {
+                            output = "Perfect!";
+                        }
+                        document.getElementById("demo").innerHTML = output;
+                    }
+
+                </script>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>

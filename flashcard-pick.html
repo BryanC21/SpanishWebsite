@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Flashcards 1</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="homepage.css">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <a class="navbar-brand" href="index.html">Learn Spanish</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lessons.html">Lessons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quizes.html">Quizzes</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="flashcards.html">FlashCards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <br>
+            <h1 class="centered-text">Flashcards 1</h1>
+            <br>
+
+            <div class="row" id="father-row">
+                <div class="col-md-2"></div>
+
+
+                <!--<div class="col-md-4 fixed-height-box centered-text">a thing</div>-->
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card__face"><h2 id="card-front-1">Hola</h2></div>
+                        <div class="card__face card__face--back"><h2 id="card-back-1">Hello</h2></div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2"></div>
+                <div class="col-md-2"></div>
+
+                <div class="col-md-8">
+                    <div id="card2" class="card card2">
+                        <div class="card__face"><h2 id="card-front-2">Como estas</h2></div>
+                        <div class="card__face card__face--back"><h2 id="card-back-2">How are you</h2></div>
+                    </div>
+                </div>
+
+                <div class="col-md-2"></div>
+                <div class="col-md-2"></div>
+
+                <div class="col-md-8">
+                    <div class="card card3">
+                        <div class="card__face"><h2 id="card-front-3">Mi nombre es</h2></div>
+                        <div class="card__face card__face--back"><h2 id="card-back-3">My name is</h2></div>
+                    </div>
+                </div>
+
+                <div class="col-md-2"></div>
+
+
+            </div>
+
+        </div>
+
+        <script>
+
+            var card = document.querySelector('.card');
+            card.addEventListener('click', function () {
+                card.classList.toggle('is-flipped');
+            });
+
+            var card2 = document.getElementById("card2");
+            card2.addEventListener('click', function () {
+                card2.classList.toggle('is-flipped');
+            });
+
+            var card3 = document.querySelector('.card3');
+            card3.addEventListener('click', function () {
+                card3.classList.toggle('is-flipped');
+            });
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const myParam = urlParams.get('section');
+
+            if (myParam == 2) {
+                
+                document.getElementById("card-front-1").innerHTML = "Uno";
+                document.getElementById("card-front-2").innerHTML = "Dos";
+                document.getElementById("card-front-3").innerHTML = "Tres";
+                
+                document.getElementById("card-back-1").innerHTML = "One";
+                document.getElementById("card-back-2").innerHTML = "Two";
+                document.getElementById("card-back-3").innerHTML = "Three";
+
+                var element = document.getElementById("father-row");
+
+                var tempElem = document.createElement("div");
+
+                tempElem.classList.add("col-md-2");
+                element.appendChild(tempElem);
+                element.appendChild(tempElem);
+
+                tempElem = document.createElement("div");
+                tempElem.classList.add("col-md-8");
+                element.appendChild(tempElem);
+
+                var childTemp = document.createElement("div");
+                childTemp.classList.add("card");
+                childTemp.classList.add("card4");
+                tempElem.appendChild(childTemp);
+
+                var front = document.createElement("div");
+                front.classList.add("card__face");
+                front.innerHTML = "<h2>Cuatro</h2>";
+                childTemp.appendChild(front);
+
+                var back = document.createElement("div");
+                back.classList.add("card__face");
+                back.classList.add("card__face--back");
+                back.innerHTML = "<h2>Four</h2>";
+                childTemp.appendChild(back);
+
+                var card4 = document.querySelector('.card4');
+                card4.addEventListener('click', function () {
+                    card4.classList.toggle('is-flipped');
+                });
+
+            }
+
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>

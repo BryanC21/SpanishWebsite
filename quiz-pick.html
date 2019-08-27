@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Quiz 1</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="homepage.css">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <a class="navbar-brand" href="index.html">Learn Spanish</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lessons.html">Lessons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="quizes.html">Quizzes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flashcards.html">FlashCards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <br>
+            <h1 class="centered-text" id="title1">Quiz 1</h1>
+            <br>
+
+            <p id="q1">How do you say hello in Spanish?</p>
+            <input type="radio" name="choice" value="30" id="q1a1"><span id="text-q1a1"> Adios</span><br>
+            <input type="radio" name="choice" value="60" id="q1a2"><span id="text-q1a2"> Hola</span><br>
+            <input type="radio" name="choice" value="100" id="q1a3"><span id="text-q1a3"> Mi</span><br>
+            <input type="radio" name="choice" value="100" id="q1a4"><span id="text-q1a4"> Alo</span><br> 
+            <p id="demo" class="wrong"></p>
+
+            <p id="q2">What does "Mi nombre es" mean?</p>
+                <input type="radio" name="choice2" value="30" id="q2a1"><span id="text-q2a1"> My name is</span><br>
+                <input type="radio" name="choice2" value="60" id="q2a2"><span id="text-q2a2"> What is your name</span><br>
+                <input type="radio" name="choice2" value="100" id="q2a3"><span id="text-q2a3"> Nice to meet you</span><br>
+                <input type="radio" name="choice2" value="100" id="q2a4"><span id="text-q2a4"> How are you</span><br> 
+            <p id="demo2" class="wrong"></p>
+
+            <p id="q3">Which of these is the right way to ask "How are you"?</p>
+            <input type="radio" name="choice3" value="30" id="q3a1"><span id="text-q3a1"> Que es tu nombre</span><br>
+            <input type="radio" name="choice3" value="60" id="q3a2"><span id="text-q3a2"> Estoy bien</span><br>
+            <input type="radio" name="choice3" value="100" id="q3a3"><span id="text-q3a3"> Como estas</span><br>
+            <input type="radio" name="choice3" value="100" id="q3a4"><span id="text-q3a4"> None of the above</span><br> 
+            <p id="demo3" class="wrong"></p>
+
+            <button onclick="myFunction()" style="background-color:orange;">Submit</button>
+
+        </div>
+
+        <script>
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const myParam = urlParams.get('section');
+
+            if (myParam == 2){
+                
+                document.getElementById("title1").innerHTML = "Section 2";
+                
+                document.getElementById("q1").innerHTML = "One in spanish:";
+                document.getElementById("text-q1a1").innerHTML = " uno";
+                document.getElementById("text-q1a2").innerHTML = " tres";
+                document.getElementById("text-q1a3").innerHTML = " cuatro";
+                document.getElementById("text-q1a4").innerHTML = " dos";
+                
+                document.getElementById("q2").innerHTML = "Two in spanish:";
+                document.getElementById("text-q2a1").innerHTML = " uno";
+                document.getElementById("text-q2a2").innerHTML = " tres";
+                document.getElementById("text-q2a3").innerHTML = " cuatro";
+                document.getElementById("text-q2a4").innerHTML = " dos";
+                
+                document.getElementById("q3").innerHTML = "Three in spanish:";
+                document.getElementById("text-q3a1").innerHTML = " uno";
+                document.getElementById("text-q3a2").innerHTML = " tres";
+                document.getElementById("text-q3a3").innerHTML = " cuatro";
+                document.getElementById("text-q3a4").innerHTML = " dos";
+            }
+
+            function myFunction() {
+
+                var correct = false;
+                if(myParam == 2){
+                    if (document.getElementById("q1a1").checked) {
+                        correct = true;
+                    }
+                }else {
+                    if (document.getElementById("q1a2").checked) {
+                        correct = true;
+                    }
+                }
+                var ans = "Wrong";
+                if (correct) {
+                    ans = "Correct";
+                    document.getElementById("demo").style = "background-color: green;";
+                }
+                document.getElementById("demo").innerHTML = ans;
+
+
+                var correct2 = false;
+                if(myParam == 2){
+                    if (document.getElementById("q2a4").checked) {
+                        correct2 = true;
+                    }
+                }else {
+                    if (document.getElementById("q2a1").checked) {
+                        correct2 = true;
+                    }
+                }
+                var ans2 = "Wrong";
+                if (correct2) {
+                    ans2 = "Correct";
+                    document.getElementById("demo2").style = "background-color: green;";
+                }
+                document.getElementById("demo2").innerHTML = ans2;
+
+                var correct3 = false;
+                if(myParam == 2){
+                    if (document.getElementById("q3a2").checked) {
+                        correct3 = true;
+                    }
+                }else {
+                    if (document.getElementById("q3a3").checked) {
+                        correct3 = true;
+                    }
+                }
+                var ans3 = "Wrong";
+                if (correct3) {
+                    ans3 = "Correct";
+                    document.getElementById("demo3").style = "background-color: green;";
+                }
+                document.getElementById("demo3").innerHTML = ans3;
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>
